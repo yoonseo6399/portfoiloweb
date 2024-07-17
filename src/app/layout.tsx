@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +16,36 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ko">
+      <body className={inter.className}>
+      <NavigationBar></NavigationBar>
+        {children}
+      </body>
     </html>
   );
+}
+
+export function NavigationBar(){
+    return(
+        <>
+            <div className={`flex-shrink h-8 w-auto flex-row mb-6 items-center justify-center content-center`}>
+                <Logo></Logo>
+                <NavButton>About us</NavButton>
+            </div>
+            <hr/>
+        </>
+
+    );
+}
+export function NavButton({children}: Readonly<{ children: React.ReactNode; }>){
+    return(
+        <div className={`inline-flex rounded-md transition-all duration-150 hover:bg-green-400 text-xl`}>&nbsp;{children}&nbsp;</div>
+    );
+}
+export function Logo(){
+    return(
+        <div className={`inline-flex rounded-md transition-all duration-150 hover:bg-green-400 text-xl logo-comfortaa flex-row justify-evenly items-center`}>
+            <img src="/logo.png" alt="" className={`w-9 h-9`}/><p>Entangled</p>
+        </div>
+    );
 }
