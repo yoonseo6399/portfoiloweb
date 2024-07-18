@@ -17,8 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={inter.className}>
-      <NavigationBar></NavigationBar>
+      <body className={`bg-gray-200`}>
+        <div className={'mt-10'}></div>
         {children}
       </body>
     </html>
@@ -49,3 +49,10 @@ export function Logo(){
         </div>
     );
 }
+
+export function FadeInCard({children}: Readonly<{ children: React.ReactNode; }>){
+    return(
+        <div className={`bg`}>&nbsp;{children}&nbsp;</div>
+    );
+}
+

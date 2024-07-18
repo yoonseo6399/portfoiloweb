@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+
+}
+
 .logo-comfortaa {
                 font-family: "Comfortaa", sans-serif;
                 font-optical-sizing: auto;
